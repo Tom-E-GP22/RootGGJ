@@ -7,9 +7,12 @@ public class BreakoutBall : MonoBehaviour
 {
     private Vector2 direction;
     private float stuckTimer;
+    private bool canPull = true;
 
     public Transform paddle;
+    public GameObject pullBtn;
     public float speed;
+    public float pullCooldown;
 
     void Start()
     {
@@ -51,7 +54,20 @@ public class BreakoutBall : MonoBehaviour
 
     public void Pull()
     {
-        direction = paddle.position - transform.position;
-        direction.Normalize();
+        if (canPull)
+        {
+            direction = paddle.position - transform.position;
+            direction.Normalize();
+            StartCoroutine("StartCooldown");
+        }
+    }
+
+    public IEnumerator StartCooldown()
+    {
+        canPull = false;
+        pullBtn.SetActive(false);
+        yield return new WaitForSeconds(pullCooldown);
+        canPull = true;
+        pullBtn.SetActive(true);
     }
 }
