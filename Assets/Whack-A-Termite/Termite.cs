@@ -14,7 +14,6 @@ public class Termite : MonoBehaviour
     private string upTrigger = "Up";
 
     [Header("Values")]
-    private float cooldown = 2f;
     private static int score;
     private int winScore = 25;
 
