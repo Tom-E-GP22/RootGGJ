@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Termite : MonoBehaviour
 {
     [Header("Components")]
+    [SerializeField] AudioClip termiteLaugh;
+    MinigameManager gameManager;
     private Animator animator;
     private Button button;
 
@@ -13,14 +15,11 @@ public class Termite : MonoBehaviour
     private string bonkTrigger = "Bonk";
     private string upTrigger = "Up";
 
-    [Header("Values")]
-    private static int score;
-    private int winScore = 25;
-
     private void Awake()
     {
         animator = GetComponent<Animator>();
         button = GetComponentInParent<Button>();
+        gameManager = GetComponentInParent<MinigameManager>();
         button.interactable = false;
         StartCoroutine(PopUp());
     }
@@ -29,9 +28,9 @@ public class Termite : MonoBehaviour
     {
         animator.SetTrigger(bonkTrigger);
         button.interactable = false;
-        score++;
+        gameManager.score++;
 
-        if (score >= winScore)
+        if (gameManager.score >= gameManager.winScore)
         {
             Debug.Log("you win");
         }
@@ -42,8 +41,10 @@ public class Termite : MonoBehaviour
     }
     public void Missed()
     {
+        GetComponentInParent<AudioSource>().PlayOneShot(termiteLaugh);
         animator.SetTrigger(bonkTrigger);
         Debug.Log("u suck");
+        StartCoroutine(PopUp());
     }
 
     private IEnumerator PopUp()
