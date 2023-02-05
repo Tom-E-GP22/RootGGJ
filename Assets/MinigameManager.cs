@@ -18,4 +18,9 @@ public class MinigameManager : MonoBehaviour
             fadeOut.Invoke();
         }
     }
+
+    public void RecoverMouse()
+    {
+        Cursor.visible = true;
+    }
 }
