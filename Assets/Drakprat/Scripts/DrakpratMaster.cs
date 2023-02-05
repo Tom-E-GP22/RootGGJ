@@ -8,7 +8,7 @@ using Unity.Mathematics;
 
 public class DrakpratMaster : MonoBehaviour
 {
-    private string fail = "You shall speak with respect";
+    private string fail;
 
     private System.Random _random = new System.Random();
     private int index = 0;
@@ -46,6 +46,7 @@ public class DrakpratMaster : MonoBehaviour
 
     private void Start()
     {
+        fail = "You shall speak with respect";
         for (int i = 0; i < 3; i++)
             placements[i] = i;
         
@@ -63,6 +64,7 @@ public class DrakpratMaster : MonoBehaviour
 
             if (timer <= 0)
             {
+                fail = "Don't waste my time vermin";
                 BadChoice();
             }
         }
