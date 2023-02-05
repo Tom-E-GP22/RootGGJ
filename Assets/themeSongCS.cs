@@ -5,8 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class themeSongCS : MonoBehaviour
 {
+    themeSongCS[] musicPlayer;
+
     private void Awake()
     {
+        musicPlayer = FindObjectsOfType<themeSongCS>();
+        if(musicPlayer.Length > 1)
+            Destroy(musicPlayer[1]);
+
         var sceneName = SceneManager.GetActiveScene().name;
 
         if (sceneName == "Overworld" || sceneName == "MainMenu")
