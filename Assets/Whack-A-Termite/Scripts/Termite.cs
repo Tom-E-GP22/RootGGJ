@@ -28,13 +28,9 @@ public class Termite : MonoBehaviour
     {
         animator.SetTrigger(bonkTrigger);
         button.interactable = false;
-        gameManager.score++;
+        gameManager.ScoreUp();
 
-        if (gameManager.score >= gameManager.winScore)
-        {
-            Debug.Log("you win");
-        }
-        else
+        if (gameManager.score != gameManager.winScore)
         {
             StartCoroutine(PopUp());
         }

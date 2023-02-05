@@ -1,20 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MinigameManager : MonoBehaviour
 {
+    public UnityEvent fadeOut;
     [Header("Values")]
     public int winScore = 25;
     public int score;
 
-    void Start()
+    public void ScoreUp()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        score++;
+        if(score == winScore)
+        {
+            fadeOut.Invoke();
+        }
     }
 }
