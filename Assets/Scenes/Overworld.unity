@@ -735,10 +735,10 @@ MonoBehaviour:
   - grow4
   - grow5
   minigames:
-  - GuideTheWorm
-  - Whack-a-Termite
-  - Breakout
-  - RhythmBoat
+  - WormTalk
+  - TermitkungTalk
+  - SpiderTalk
+  - PiratTalk
   - Drakprat
 --- !u!95 &1108518132
 Animator:
