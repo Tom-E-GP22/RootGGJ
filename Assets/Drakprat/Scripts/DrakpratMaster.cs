@@ -114,9 +114,7 @@ public class DrakpratMaster : MonoBehaviour
             ShowChoices();
         }
         else
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+            GeneralFade.i.FadeOut("Drakprat");
     }
 
     public void BadChoice()
