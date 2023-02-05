@@ -135,7 +135,7 @@ public class DrakpratMaster : MonoBehaviour
     {
         if (index >= 4)
         {
-            Debug.Log("Win");
+            GeneralFade.i.FadeOut("Credits");
             timerOn = false;
         }
         else
