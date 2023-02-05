@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Pratscener/WormPostTalk.unity
     guid: 887e68fec8f1fad4ebe174b1bc2cf859
   - enabled: 1
+    path: Assets/Scenes/Whack-a-Termite.unity
+    guid: 9a376b5cdd571b24fa7e312e9e7d7500
+  - enabled: 1
     path: Assets/Scenes/Pratscener/SpiderTalk.unity
     guid: 7029eb95e22c54f42be7b83d2285dd91
   - enabled: 1

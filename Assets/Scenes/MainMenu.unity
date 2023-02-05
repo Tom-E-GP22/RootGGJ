@@ -526,6 +526,7 @@ GameObject:
   - component: {fileID: 1116727775}
   - component: {fileID: 1116727774}
   - component: {fileID: 1116727773}
+  - component: {fileID: 1116727776}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -598,6 +599,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1116727776}
+        m_TargetAssemblyTypeName: ClearKey, Assembly-CSharp
+        m_MethodName: DeleteKey
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: completedMinigames
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 7573565778486723119}
         m_TargetAssemblyTypeName: GeneralFade, Assembly-CSharp
         m_MethodName: FadeOut
@@ -648,6 +661,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116727771}
   m_CullTransparentMesh: 1
+--- !u!114 &1116727776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116727771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c3a548f0854164b92fd48e8ad81b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1193859570
 GameObject:
   m_ObjectHideFlags: 0

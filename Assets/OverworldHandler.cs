@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEngine.Rendering.DebugUI;
 
 public class OverworldHandler : MonoBehaviour
 {
@@ -10,10 +11,18 @@ public class OverworldHandler : MonoBehaviour
     [SerializeField] string[] grow;
     [SerializeField] string[] minigames;
     bool transitionDone;
+
+    string minigameKey = "completedMinigames";
     int completedMinigames = -1;
+    int minValue;
 
     void Awake()
     {
+        if(!PlayerPrefs.HasKey(minigameKey))
+            PlayerPrefs.SetInt(minigameKey, minValue);
+        else
+            completedMinigames = PlayerPrefs.GetInt(minigameKey);
+
         transitionDone = false;
 
         if(completedMinigames >= 0)
@@ -31,13 +40,15 @@ public class OverworldHandler : MonoBehaviour
         {
             completedMinigames++;
             transitionDone = false;
+            PlayerPrefs.SetInt(minigameKey, completedMinigames);
+
             rootAnim.SetTrigger(grow[completedMinigames]);
-            Invoke(nameof(FadeOut), 2f);
+            Invoke(nameof(FadeOut), 3.5f);
         }
     }
 
     void FadeOut()
     {
-        fadeCS.FadeOut(minigames[completedMinigames-1]);
+        fadeCS.FadeOut(minigames[completedMinigames]);
     }
 }
