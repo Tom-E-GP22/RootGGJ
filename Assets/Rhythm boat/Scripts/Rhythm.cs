@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Rhythm : MonoBehaviour
 {
-    AudioSource musicSource;
+    [SerializeField] UnityEvent deathEvent;
+    [SerializeField] UnityEvent winEvent;
     [SerializeField] GameObject beatOrb;
     [SerializeField] GameObject dangerOrb;
+    AudioSource musicSource;
 
     [SerializeField] int BPM = 60;
     [SerializeField] float speed = 60;
@@ -17,6 +20,9 @@ public class Rhythm : MonoBehaviour
     float secPerBeat;
     int lastBeat;
     int health = 3;
+
+    bool dead = false;
+    bool win = false;
 
     void Start()
     {
@@ -73,16 +79,23 @@ public class Rhythm : MonoBehaviour
 
     private void WinState()
     {
-        Debug.Log("cool, you won <3");
+        if (!win)
+        {
+            win = true;
+            Debug.Log("cool, you won <3");
+            winEvent.Invoke();
+        }
     }
 
     public void RemoveHealth()
     {
         health--;
 
-        if(health <= 0)
+        if (health <= 0 && !dead)
         {
+            dead = true;
             Debug.Log("skill diff");
+            deathEvent.Invoke();
         }
     }
 }
