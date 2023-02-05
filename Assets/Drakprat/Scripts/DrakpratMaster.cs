@@ -24,4 +24,9 @@ public class DrakpratMaster : MonoBehaviour
         public string words;
         public int fontsize;
     }
+
+    private void Start()
+    {
+        
+    }
 }
