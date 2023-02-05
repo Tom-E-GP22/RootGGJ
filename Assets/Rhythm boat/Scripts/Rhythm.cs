@@ -63,7 +63,7 @@ public class Rhythm : MonoBehaviour
     {
         var orb = Instantiate(orbType, new Vector2(-5, transform.position.y), Quaternion.identity);
         var orbCS = orb.GetComponent<BeatOrb>();
-        orbCS.targetPos = transform.position;
+        orbCS.targetPos = (Vector2)transform.position;
         orbCS.thisBeat = songPosBeat;
         orbCS.rhythmCS = this;
         orbCS.speed = speed;
