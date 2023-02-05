@@ -6,6 +6,7 @@ public class Rhythm : MonoBehaviour
 {
     AudioSource musicSource;
     [SerializeField] GameObject beatOrb;
+    [SerializeField] GameObject dangerOrb;
 
     [SerializeField] int BPM = 60;
     [SerializeField] float speed = 60;
@@ -15,9 +16,7 @@ public class Rhythm : MonoBehaviour
     float dspTimeSong;
     float secPerBeat;
     int lastBeat;
-
-    float[] notes;
-    int nextIndex = 0;
+    int health = 3;
 
     void Start()
     {
@@ -36,16 +35,54 @@ public class Rhythm : MonoBehaviour
 
         songPosBeat = songPosSec / secPerBeat;
 
-        if (songPosBeat >= lastBeat + 1f)
+        if (songPosBeat >= lastBeat + 1f && songPosBeat <= 58)
         {
-            Debug.Log("beat");
             lastBeat++;
-            var orb = Instantiate(beatOrb, new Vector2(-5, transform.position.y), Quaternion.identity);
-            var orbCS = orb.GetComponent<beatOrb>();
-            orbCS.targetPos = transform.position;
-            orbCS.thisBeat = songPosBeat;
-            orbCS.rhythmCS = this;
-            orbCS.speed = speed;
+            int dangerOrbChance = Random.Range(1, 5);
+
+            Debug.Log(dangerOrbChance);
+
+            if (dangerOrbChance < 4)
+            {
+                var orbInstance = SpawnOrb(beatOrb);
+                orbInstance.GetComponent<BeatOrb>().orb = BeatOrb.orbTypes.beat;
+            }
+            else
+            {
+                var orbInstance = SpawnOrb(dangerOrb);
+                orbInstance.GetComponent<BeatOrb>().orb = BeatOrb.orbTypes.danger;
+            }
+        }
+        else if (songPosBeat >= 62)
+        {
+            WinState();
+        }
+    }
+
+    GameObject SpawnOrb(GameObject orbType)
+    {
+        var orb = Instantiate(orbType, new Vector2(-5, transform.position.y), Quaternion.identity);
+        var orbCS = orb.GetComponent<BeatOrb>();
+        orbCS.targetPos = transform.position;
+        orbCS.thisBeat = songPosBeat;
+        orbCS.rhythmCS = this;
+        orbCS.speed = speed;
+
+        return orb;
+    }
+
+    private void WinState()
+    {
+        Debug.Log("cool, you won <3");
+    }
+
+    public void RemoveHealth()
+    {
+        health--;
+
+        if(health <= 0)
+        {
+            Debug.Log("skill diff");
         }
     }
 }

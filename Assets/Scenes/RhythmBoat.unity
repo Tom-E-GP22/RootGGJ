@@ -568,6 +568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatOrb: {fileID: 6802359216689172590, guid: bb6d02ad5fac51543a3cd42383e05364, type: 3}
+  dangerOrb: {fileID: 6802359216689172590, guid: ebc5203d51896934db386b65c67bbb94, type: 3}
   BPM: 120
   speed: 2.8
   firstBeatOffset: 1.42

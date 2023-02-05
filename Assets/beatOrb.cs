@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class beatOrb : MonoBehaviour
+public class BeatOrb : MonoBehaviour
 {
     [SerializeField] GameObject canonBall;
 
@@ -13,10 +13,8 @@ public class beatOrb : MonoBehaviour
     public float thisBeat;
     public float speed;
 
-
-    void Start()
-    {
-    }
+    public enum orbTypes { beat, danger }
+    public orbTypes orb;
 
     void Update()
     {
@@ -24,15 +22,27 @@ public class beatOrb : MonoBehaviour
 
         transform.position = Vector2.MoveTowards(transform.position, targetPos, step);
 
-        if(Input.GetMouseButtonDown(0) && Vector2.Distance(transform.position, targetPos) <= 0.5f) 
+        if (Input.GetMouseButtonDown(0) && Vector2.Distance(transform.position, targetPos) <= 0.5f)
         {
-            Debug.Log("wow");
-            Shoot();
-            Destroy(gameObject);
+            if (orb == orbTypes.beat)
+            {
+                Debug.Log("wow");
+                Shoot();
+                Destroy(gameObject);
+            }
+            else if (orb == orbTypes.danger)
+            {
+                Miss();
+            }
         }
-        if((Vector2)transform.position == targetPos)
+
+        if ((Vector2)transform.position == targetPos && orb == orbTypes.beat)
         {
             Miss();
+        }
+        else if ((Vector2)transform.position == targetPos && orb == orbTypes.danger)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -44,7 +54,7 @@ public class beatOrb : MonoBehaviour
 
     void Miss()
     {
-        Debug.Log("you're shit");
+        rhythmCS.RemoveHealth();
         Destroy(gameObject);
     }
 }
