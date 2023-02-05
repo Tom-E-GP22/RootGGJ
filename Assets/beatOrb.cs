@@ -26,7 +26,6 @@ public class beatOrb : MonoBehaviour
         {
             Debug.Log("wow");
             Destroy(this);
-            
         }
         if((Vector2)transform.position == targetPos)
         {
