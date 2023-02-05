@@ -1,28 +1,21 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WormFade : MonoBehaviour
+public class GeneralFade : MonoBehaviour
 {
     public Transform worm;
+    public static GeneralFade i;
 
     private Animator anim;
+
+    private string sceneName;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
-    }
-
-    private void OnEnable()
-    {
-        WormRock.OnWormDeath += WormDeath;
-    }
-
-    private void OnDisable()
-    {
-        WormRock.OnWormDeath -= WormDeath;
+        i = this;
     }
 
     public void SetPos()
@@ -32,11 +25,12 @@ public class WormFade : MonoBehaviour
 
     public void LoadScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(sceneName);
     }
 
-    private void WormDeath()
+    public void FadeOut(string scene)
     {
+        sceneName = scene;
         anim.SetTrigger("Death");
     }
 }

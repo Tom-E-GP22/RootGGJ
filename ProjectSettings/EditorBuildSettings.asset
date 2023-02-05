@@ -8,4 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/GuideTheWorm.unity
+    guid: 1d347f7a8e6e7dc43a05c1c2dfd42c0f
+  - enabled: 1
+    path: Assets/Scenes/Pratscener/WormPostTalk.unity
+    guid: 887e68fec8f1fad4ebe174b1bc2cf859
+  - enabled: 1
+    path: Assets/Scenes/Pratscener/SpiderTalk.unity
+    guid: 7029eb95e22c54f42be7b83d2285dd91
+  - enabled: 1
+    path: Assets/Scenes/Breakout.unity
+    guid: 47128fb7f46cdec4087f00435d7d50e7
+  - enabled: 1
+    path: Assets/Scenes/Pratscener/SpiderPostTalk.unity
+    guid: bc6ce5cf4dafbe14192cd2c944c1fdb1
   m_configObjects: {}

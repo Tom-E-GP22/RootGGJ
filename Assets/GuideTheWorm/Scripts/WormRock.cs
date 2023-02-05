@@ -11,5 +11,7 @@ public class WormRock : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         OnWormDeath();
+
+        GeneralFade.i.FadeOut("GuideTheWorm");
     }
 }

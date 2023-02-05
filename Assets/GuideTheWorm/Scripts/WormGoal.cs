@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class WormGoal : MonoBehaviour
 {
+    public WormController worm;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Win");
+        worm.speed = 0;
+        GeneralFade.i.FadeOut("WormPostTalk");
     }
 }

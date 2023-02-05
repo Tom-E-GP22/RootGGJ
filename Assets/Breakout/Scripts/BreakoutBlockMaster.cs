@@ -10,7 +10,7 @@ public class BreakoutBlockMaster : MonoBehaviour
     {
         if (blocks <= 0)
         {
-            Debug.Log("win");
+            GeneralFade.i.FadeOut("SpiderPostTalk");
         }
     }
 }
