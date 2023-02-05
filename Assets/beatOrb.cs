@@ -9,7 +9,7 @@ public class beatOrb : MonoBehaviour
     public Vector2 targetPos;
 
     public float thisBeat;
-    [SerializeField] float speed;
+    public float speed;
 
 
     void Start()

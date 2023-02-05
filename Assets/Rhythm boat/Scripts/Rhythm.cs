@@ -8,6 +8,7 @@ public class Rhythm : MonoBehaviour
     [SerializeField] GameObject beatOrb;
 
     [SerializeField] int BPM = 60;
+    [SerializeField] float speed = 60;
     [SerializeField] float firstBeatOffset;
     public float songPosBeat;
     float songPosSec;
@@ -35,7 +36,7 @@ public class Rhythm : MonoBehaviour
 
         songPosBeat = songPosSec / secPerBeat;
 
-        if(songPosBeat >= lastBeat +1f)
+        if (songPosBeat >= lastBeat + 1f)
         {
             Debug.Log("beat");
             lastBeat++;
@@ -44,6 +45,7 @@ public class Rhythm : MonoBehaviour
             orbCS.targetPos = transform.position;
             orbCS.thisBeat = songPosBeat;
             orbCS.rhythmCS = this;
+            orbCS.speed = speed;
         }
     }
 }
