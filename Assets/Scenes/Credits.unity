@@ -265,12 +265,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Morgon
+  m_text: '
 
-    Adrian'
+    Morgon
+
+
+    Adrian Lewentorp'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
-  m_sharedMaterial: {fileID: -8622645172853977785, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
+  m_sharedMaterial: {fileID: -6128266884855478944, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -405,7 +408,7 @@ MonoBehaviour:
   m_text: Thanks for Playing
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
-  m_sharedMaterial: {fileID: -8622645172853977785, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
+  m_sharedMaterial: {fileID: -6128266884855478944, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -537,10 +540,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Samuel Olsson\nSandra P\xE4rnaste"
+  m_text: "\nSamuel Olsson\n\nSandra P\xE4rnaste"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
-  m_sharedMaterial: {fileID: -8622645172853977785, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
+  m_sharedMaterial: {fileID: -6128266884855478944, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -675,7 +678,7 @@ MonoBehaviour:
   m_text: Music
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
-  m_sharedMaterial: {fileID: -8622645172853977785, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
+  m_sharedMaterial: {fileID: -6128266884855478944, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -810,7 +813,7 @@ MonoBehaviour:
   m_text: Programmers
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
-  m_sharedMaterial: {fileID: -8622645172853977785, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
+  m_sharedMaterial: {fileID: -6128266884855478944, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1187,7 +1190,7 @@ MonoBehaviour:
   m_text: Artists
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
-  m_sharedMaterial: {fileID: -8622645172853977785, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
+  m_sharedMaterial: {fileID: -6128266884855478944, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1387,10 +1390,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tom Eckerstr\xF6m\nSelma Sk\xF6ld"
+  m_text: "\nTom Eckerstr\xF6m\n\nSelma Sk\xF6ld"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
-  m_sharedMaterial: {fileID: -8622645172853977785, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
+  m_sharedMaterial: {fileID: -6128266884855478944, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1525,7 +1528,7 @@ MonoBehaviour:
   m_text: ~
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
-  m_sharedMaterial: {fileID: -8622645172853977785, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
+  m_sharedMaterial: {fileID: -6128266884855478944, guid: 3f14129b6cd84224e916e83290d6e4fa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
