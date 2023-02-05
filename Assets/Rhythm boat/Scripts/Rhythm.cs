@@ -37,6 +37,7 @@ public class Rhythm : MonoBehaviour
 
         if(songPosBeat >= lastBeat +1f)
         {
+            Debug.Log("beat");
             lastBeat++;
             var orb = Instantiate(beatOrb, new Vector2(-5, transform.position.y), Quaternion.identity);
             var orbCS = orb.GetComponent<beatOrb>();
