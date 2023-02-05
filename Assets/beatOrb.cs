@@ -22,10 +22,11 @@ public class beatOrb : MonoBehaviour
 
         transform.position = Vector2.MoveTowards(transform.position, targetPos, step);
 
-        if(Input.GetMouseButtonDown(0) && Vector2.Distance(transform.position, targetPos) <= 0.4f) 
+        if(Input.GetMouseButtonDown(0) && Vector2.Distance(transform.position, targetPos) <= 1f) 
         {
             Debug.Log("wow");
-            Destroy(gameObject);
+            Destroy(this);
+            
         }
         if((Vector2)transform.position == targetPos)
         {
