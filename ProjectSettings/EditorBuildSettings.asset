@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Overworld.unity
     guid: 540f869a85561064987dacd569d16cdc
+  - enabled: 1
+    path: Assets/Scenes/Whack-a-Termite.unity
+    guid: 9a376b5cdd571b24fa7e312e9e7d7500
   m_configObjects: {}

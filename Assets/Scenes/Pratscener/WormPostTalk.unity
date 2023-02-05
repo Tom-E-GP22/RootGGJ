@@ -1032,7 +1032,7 @@ MonoBehaviour:
   - words: Surely with this; I can survive this wretched age
   - words: Good luck with your journey and watch out for evil doers!
   textDisplay: {fileID: 1057668283}
-  nextScene: GuideTheWorm
+  nextScene: Overworld
   typeSpeed: 0.05
 --- !u!114 &2138632989
 MonoBehaviour:
