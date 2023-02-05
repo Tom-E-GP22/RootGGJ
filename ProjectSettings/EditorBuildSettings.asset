@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: ac78b5154d6160d4987ef13c40024e4f
+  - enabled: 1
+    path: Assets/Scenes/RhythmBoat.unity
+    guid: abd739a883767c34ba398fee2f988261
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -24,6 +30,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Pratscener/SpiderPostTalk.unity
     guid: bc6ce5cf4dafbe14192cd2c944c1fdb1
   - enabled: 1
-    path: Assets/Scenes/RhythmBoat.unity
-    guid: abd739a883767c34ba398fee2f988261
+    path: Assets/Scenes/Overworld.unity
+    guid: 540f869a85561064987dacd569d16cdc
   m_configObjects: {}
