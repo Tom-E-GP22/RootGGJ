@@ -11,7 +11,6 @@ public class Talking : MonoBehaviour
 {
     public Sentance[] sentances;
     public TextMeshProUGUI textDisplay;
-    public Image image;
 
     public string nextScene;
     public float typeSpeed;
@@ -23,7 +22,6 @@ public class Talking : MonoBehaviour
     public class Sentance
     {
         public string words;
-        public Sprite image;
     }
 
     public void Start()
@@ -58,7 +56,6 @@ public class Talking : MonoBehaviour
 
     IEnumerator Type(string sent)
     {
-        image.GetComponent<Image>().sprite = sentances[index].image;
         isTyping = true;
 
         foreach (char letter in sent.ToCharArray())

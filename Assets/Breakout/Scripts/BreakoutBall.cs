@@ -8,6 +8,8 @@ public class BreakoutBall : MonoBehaviour
     private Vector2 direction;
     private float stuckTimer;
     private bool canPull = true;
+    private LineRenderer lineRenderer;
+    private bool pulling;
 
     public Transform paddle;
     public GameObject pullBtn;
@@ -16,6 +18,7 @@ public class BreakoutBall : MonoBehaviour
 
     void Start()
     {
+        lineRenderer = GetComponent<LineRenderer>();
         direction = Vector2.one.normalized;
     }
 
@@ -24,15 +27,22 @@ public class BreakoutBall : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = direction * speed;
     }
 
+    private void Update()
+    {
+        if (pulling)
+        {
+            lineRenderer.SetPosition(0, transform.position);
+            lineRenderer.SetPosition(1, paddle.position);
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Respawn"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-
         direction = Vector2.Reflect(direction, collision.contacts[0].normal);
         direction.Normalize();
+
+        pulling = false;
+        lineRenderer.enabled = false;
     }
 
 
@@ -52,12 +62,22 @@ public class BreakoutBall : MonoBehaviour
         stuckTimer = 0;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Respawn"))
+        {
+            GeneralFade.i.FadeOut("Breakout");
+        }
+    }
+
     public void Pull()
     {
         if (canPull)
         {
             direction = paddle.position - transform.position;
             direction.Normalize();
+            lineRenderer.enabled = true;
+            pulling = true;
             StartCoroutine("StartCooldown");
         }
     }
