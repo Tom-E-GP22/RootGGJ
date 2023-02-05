@@ -38,18 +38,11 @@ public class Rhythm : MonoBehaviour
         if(songPosBeat >= lastBeat +1f)
         {
             lastBeat++;
-            var r_Orb = Instantiate(beatOrb, new Vector2(5, transform.position.y), Quaternion.identity);
-            var r_OrbCS = r_Orb.GetComponent<beatOrb>();
-            r_OrbCS.targetPos = transform.position;
-            r_OrbCS.thisBeat = songPosBeat;
-            r_OrbCS.rhythmCS = this;
-
-            var l_Orb = Instantiate(beatOrb, new Vector2(-5, transform.position.y), Quaternion.identity);
-            var l_OrbCS = l_Orb.GetComponent<beatOrb>();
-            l_OrbCS.targetPos = transform.position;
-            l_OrbCS.thisBeat = songPosBeat;
-            l_OrbCS.rhythmCS = this;
-
+            var orb = Instantiate(beatOrb, new Vector2(-5, transform.position.y), Quaternion.identity);
+            var orbCS = orb.GetComponent<beatOrb>();
+            orbCS.targetPos = transform.position;
+            orbCS.thisBeat = songPosBeat;
+            orbCS.rhythmCS = this;
         }
     }
 }

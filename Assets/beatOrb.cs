@@ -19,10 +19,15 @@ public class beatOrb : MonoBehaviour
 
     void Update()
     {
-        float step = 2.5f * Time.deltaTime;
+        float step = 2.25f * Time.deltaTime;
 
         transform.position = Vector2.MoveTowards(transform.position, targetPos, step);
 
+        if(Input.GetMouseButtonDown(0) && Vector2.Distance(transform.position, targetPos) <= 0.4f) 
+        {
+            Debug.Log("wow");
+            Destroy(gameObject);
+        }
         if((Vector2)transform.position == targetPos)
         {
             Miss();
